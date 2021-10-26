@@ -1,0 +1,31 @@
+
+
+.sep-aside{
+    width: 30%;
+    padding: 25px;
+}
+
+.sep-content{
+    width: 70%;
+    padding: 25px;
+}
+
+div .card{
+    margin: 5px;
+}
+
+
+@media (max-width: 576px) { 
+
+    .row{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .sep-aside{
+        width: 100%;
+    }
+    .sep-content{
+        width: 100%;
+    }
+ }
