@@ -1,9 +1,10 @@
 //importar express
 const express = require("express");
 const hbs = require("hbs") //importamos hbs
+const PunkAPIWrapper = require('punkapi-javascript-wrapper');
 
 const app = express()
-
+const punkApi = new PunkAPIWrapper()
 
 //config para hbs
 
@@ -81,6 +82,17 @@ app.get("/contact",(req,res,next)=>{
 
     res.render("contact",{ player })
 
+})
+
+
+app.get("/beers",(req,res,next)=>{
+    punkApi.getBeers().then(response=>{
+        console.log("response",response)
+        res.render("beers",{ beers: response})
+    }).catch(error=>{
+        console.log(error)
+        res.send("error")
+    })
 })
 
 //Listen
