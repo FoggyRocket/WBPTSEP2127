@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>Vistas dinamicas!!</h1>
+        <p>Los datos del alumno:</p>
+        <p>Hola {{name}}</p>
+        <p>tu edad es: {{age}}</p>
+
+        {{!-- If hbs --}}
+        {{#if lastName}}
+            <p>su apellido es: {{lastName}}</p>
+        {{/if}}
+
+        {{!--  "{x3 <></> }x3" para etquieta  --}}
+        {{!-- if else --}}
+        {{#if havePet}}
+            <h2>La mascota se llama: { { { pet } } }</h2>
+        {{else}}
+            <h2>No tiene felicidad en su vida</h2>
+        {{/if}}
+
+        {{!-- negacion en if --}}
+        {{#unless cat}}
+            <h3>WARNING: We can't find the cat!</h3>
+        {{/unless}}
+
+
+        {{!-- each  renderica o crea una lista dinamica dependiendo del numero elementos del array--}}
+        <ul>
+            {{#each friends }}
+                <li>{{this.name}} su edad es:{{this.age}}</li>
+            {{/each}}
+        </ul>
+
+    </body>
+</html>
