@@ -93,6 +93,9 @@ app.get("/beers",(req,res,next)=>{
         console.log(error)
         res.send("error")
     })
+
+    //punkApi.getRandom().then().catch()
+
 })
 
 //Listen
