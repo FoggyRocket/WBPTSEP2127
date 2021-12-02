@@ -59,8 +59,6 @@ app.get("/login",(req,res,next)=>{
 app.post("/login", validatePassword  ,  (req,res,next)=>{
     console.log("el body",req.body)
     res.send("Texto validado")
-
-
     /*req.body = {
         email:"dylan@ironhack"
         password:"Nova182$"
