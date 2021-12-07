@@ -1,0 +1,11 @@
+<h3>List</h3>
+<ul>
+    {{#each books}}
+        <li>{{title}} 
+            <a href="/book/updateBook/{{_id}}">Edit</a>
+            <a href="/book/deleteBook/{{_id}}">Delete</a>
+        </li>
+    {{/each}}
+</ul>
+
+<a href="/book/createBook">Create book</a>
