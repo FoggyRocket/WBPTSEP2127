@@ -1,0 +1,16 @@
+<h3>Dashboard</h3>
+
+<div>
+{{#each posts}}
+<div id="container-post">
+    <div class="user-prof">
+        <img src="" alt="" >
+    </div>
+    <div class="content-post">
+        <p>{{content}}</p>
+        <a href="/comment/createComment/{{_id}}">Comment</a>
+    </div>
+
+</div>
+{{/each}}
+</div>

@@ -1,0 +1,13 @@
+<h3>el post</h3>
+
+
+<div>
+    <p>Author: {{post._author.username}}</p>
+    <p>{{post.content}}</p>
+    <ul>
+        {{#each post._comments}}
+            <li> {{content}}  by:{{_author.username}}</li>
+        {{/each}}
+    </ul>
+
+</div>

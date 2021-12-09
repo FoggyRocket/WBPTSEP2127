@@ -1,0 +1,11 @@
+<h3>Create comment</h3>
+
+<form action="/comment/createComment/{{id}}" method="POST">
+    <label>Content</label>
+    <input name="content">
+    <label>id user (id)</label>
+    <input name="_author">
+    <label>Date</label>
+    <input name="date" type="date">
+    <button type="submit">Send</button>
+</form>
