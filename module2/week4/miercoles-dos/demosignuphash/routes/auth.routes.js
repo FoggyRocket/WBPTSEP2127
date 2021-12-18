@@ -28,8 +28,16 @@ router.get("/profile/:id", (req, res, next) => {
 
     User.findById(req.params.id)
     .then(user=>{
-        console.log("user",user)
-        res.render("profile",{user})
+        console.log("user1",user)
+        //return user without pass
+        const userPass =  user.toObject()
+        delete userPass.password
+        //delete userPass["password"]
+        //1) const {password,...restUser} = userPass
+
+        console.log("user2",userPass)
+
+        res.render("profile",{user:userPass})
     })
     .catch(error=>{
         console.log("error:",error)
