@@ -1,0 +1,25 @@
+<div>
+    <form>
+        <input name="title">
+            <label><input type="checkbox"  value="manga"> manga</label><br>
+            <label><input type="checkbox" value="author"> author</label><br>
+
+        <button>busca</button>
+    </form>
+</div>
+
+<span>Resultado</span>
+
+{{#if results}}
+    <ul>
+    {{#each results}}
+    <li>
+        <div>
+            <img src={{image_url}}>
+        </div>
+        {{title}}
+
+    </li>
+    {{/each}}
+    </ul>
+{{/if}}
