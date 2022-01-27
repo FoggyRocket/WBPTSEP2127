@@ -12,7 +12,7 @@ router.get("/", (req, res, next) => {
         axios.get(`https://api.jikan.moe/v3/search/manga?q=${title}&page=1&order_by=${perro}`)
         .then(responseAxios=>{
             console.log("respuesta de la peticion", responseAxios.data)
-            res.render("search",{results: responseAxios.data.results});
+            res.render("results",{results: responseAxios.data.results});
         })
         .catch(error=>{
             console.log("error")

@@ -1,0 +1,15 @@
+<span>Resultado</span>
+
+{{#if results}}
+    <ul>
+    {{#each results}}
+    <li>
+        <div>
+            <img src={{image_url}}>
+        </div>
+        {{title}}
+
+    </li>
+    {{/each}}
+    </ul>
+{{/if}}
