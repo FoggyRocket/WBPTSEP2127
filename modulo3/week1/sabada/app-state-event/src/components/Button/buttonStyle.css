@@ -1,0 +1,28 @@
+.medium {
+    width: 169px;
+}
+.large{
+    width: 346px;
+}
+.small{
+    width: 136px;
+}
+
+.primary{
+    background-color: green;
+    color:#fff;
+}
+
+.secondary{
+    background-color: salmon;
+    color:#000
+}
+
+.danger{
+    background-color: red;
+    color:#fff;
+}
+
+button{
+    border-radius: 8px;
+}

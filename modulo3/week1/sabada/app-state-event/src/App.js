@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import './App.css';
-import img1 from './assets/images/Cahaynne.jpeg'
+import img1 from './assets/images/Cahaynne.jpeg';
+import img2 from './assets/images/tom_sexy2.jpeg'
+import img3 from './assets/images/sexy.webp';
 //vamos a importar como Dylan nos esta enseñando
-import { CardStudent, Perro,FormStudent, ThemeComponent} from './components';
+import { CardStudent, Perro,FormStudent, ThemeComponent,Button} from './components';
 //manera tradicional
 // import  CardStudent  from './components/CardStudent';
 // import  Perro  from './components/Perro/Perro';
@@ -51,7 +53,28 @@ function App() {
     event.preventDefault()
     console.log("que es el dataForm",dataForm)
   }
+  //list key!!!
+  const arrayName = [
+    "Jelena","Sarah","Santiago", "Eva", "Luis","Nat","David","Cris","Dani","Sergio","Oswaldo"
+  ]
 
+  //List array object = [{...},{...},{...}]
+  const arraySexy = [
+  {
+    image:img1,
+    header:'Chayanne',
+    paragraph:'El mejor cantante y papá de Latino America'
+  },
+  {
+    image:img2,
+    header:'Tom H.',
+    paragraph:'Loki'
+  },
+  {
+    image:img3,
+    header:'Superman',
+    paragraph:'El mas sexy de DC'
+  }]
   return (
     <div className="App">
         <CardStudent 
@@ -98,7 +121,26 @@ function App() {
 
 
       <ThemeComponent perro="Nova"/>
+      <Button/>
+      <Button label="danger" type="large" buttonsType='danger' onClick={()=>console.log("Soy peligroso")} />
+      <Button label="small" type="small" buttonsType='secondary' onClick={()=>console.log("Soy el Segundo")}/>
+      {/* Maps list Key simple */}
 
+      {arrayName.map((name,index,arrOriginal)=>(
+        <Perro key={index} name={name} />
+      ) )}
+
+      {/* Map object nested */}
+      {arraySexy.map((item,index,arrOriginal)=>{
+        //...
+        console.log("que index soy",index)
+        return <CardStudent 
+            key={index}
+            //1) 
+            {...item}
+            //2) header={item.name} image={item.img} paragraph={item.paragraph}
+          />
+      })}
     </div>
   );
 }
