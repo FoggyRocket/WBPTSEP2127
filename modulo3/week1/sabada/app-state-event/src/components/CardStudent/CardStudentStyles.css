@@ -1,0 +1,11 @@
+
+img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+}
+
+.CardContainer{
+    border: 1px solid peru;
+    border-radius: 8px;
+}
