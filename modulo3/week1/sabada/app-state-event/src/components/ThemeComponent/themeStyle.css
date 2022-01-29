@@ -1,0 +1,10 @@
+.dark {
+    background: #282c34;
+    color: white;
+  }
+
+.Theme{
+    border: 1px solid bisque;
+    border-radius: 8px;
+    width: 30%; 
+}

@@ -9,12 +9,14 @@ const ItemForm =({ label="Label",name="defaultName", onChange=()=>{} })=>(
         <input name={name} onChange={onChange}/>
     </div>
 )
-const FormStudent = () =>(
-    <form>
-        <ItemForm label="Name" name="header" />
-        <ItemForm  label="Description" name="paragraph"/>
-        <ItemForm label="Profile Pic" name="image"/>
-        <button>send form</button>
+const FormStudent = ({onChange,sendData}) =>(
+    <form onSubmit={sendData}>
+        <ItemForm label="Name" name="header" onChange={onChange} />
+        <ItemForm  label="Description" name="paragraph" onChange={onChange}/>
+        <ItemForm label="Profile Pic" name="image" onChange={onChange}/>
+        <button
+            type="submit"
+        >send form</button>
     </form>
 );
 

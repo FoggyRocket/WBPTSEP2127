@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './App.css';
 import img1 from './assets/images/Cahaynne.jpeg'
 //vamos a importar como Dylan nos esta enseñando
-import { CardStudent, Perro,FormStudent} from './components';
+import { CardStudent, Perro,FormStudent, ThemeComponent} from './components';
 //manera tradicional
 // import  CardStudent  from './components/CardStudent';
 // import  Perro  from './components/Perro/Perro';
@@ -47,7 +47,8 @@ function App() {
     setDataForm(prevState => { return {...prevState,[name]:value }  })
   }
 
-  const sendData = ()=>{
+  const sendData = (event)=>{
+    event.preventDefault()
     console.log("que es el dataForm",dataForm)
   }
 
@@ -96,6 +97,7 @@ function App() {
       <FormStudent onChange={handleChange2} sendData={sendData}/>
 
 
+      <ThemeComponent perro="Nova"/>
 
     </div>
   );
