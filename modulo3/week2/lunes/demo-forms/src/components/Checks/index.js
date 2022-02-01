@@ -7,12 +7,17 @@ class Checks extends Component{
 
     //this.props
     render(){
-        const {radio,options,optionB,optionA,...restProps} = this.props
+        const {
+            radio,
+            options,
+            optionB,
+            optionA,
+            ...restProps} = this.props
         return(
             <div className="uk-margin uk-grid-small uk-child-width-auto uk-grid">
                 { radio  ?
                     <>
-                        <label><input className="uk-radio" type="radio" {...restProps} defaultChecked={true} />{optionA}</label>
+                        <label><input className="uk-radio" type="radio" {...restProps} />{optionA}</label>
                         <label><input className="uk-radio" type="radio" {...restProps} /> {optionB}</label>
                     </>
                     :
