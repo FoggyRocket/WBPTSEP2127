@@ -83,13 +83,13 @@ function App() {
           <ul>
             {addSelectFood().map((item, index) => (
               <li key={index}>
-                {`${item.name} = ${item.calories} ${item.quantity} `}
+                {`${item.name} = ${item.calories} cal.`}
               </li>
             ))}
           </ul>
 
           <p>
-            <span>{addSelectFood(true)} Cal</span>
+            <span>Total: {addSelectFood(true)} cal</span>
           </p>
         </div>
       </div>
