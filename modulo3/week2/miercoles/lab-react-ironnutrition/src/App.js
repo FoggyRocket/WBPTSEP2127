@@ -35,14 +35,16 @@ function App() {
     }, []);
     //opcion 1) reutilizando la misma funcion
     if (isCalories) {
+              //1, 400, 50000
       return newSelect.reduce((acc, val) => acc + val.calories, 0);
     }
-
+            //[{..},{..},{...}]
     return newSelect;
   };
   //opcion 2) otra funcion
   const sumCal = () => {
-    return addSelectFood(selectFood).reduce(
+     //1, 400, 50000
+    return addSelectFood().reduce(
       (acc, val) => acc + val.calories,
       0
     );
@@ -83,7 +85,7 @@ function App() {
           <ul>
             {addSelectFood().map((item, index) => (
               <li key={index}>
-                {`${item.name} = ${item.calories} cal.`}
+                {`${item.name} = ${item.calories} cal. ${item.quantity} cant`}
               </li>
             ))}
           </ul>
