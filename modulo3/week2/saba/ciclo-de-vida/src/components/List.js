@@ -1,12 +1,10 @@
 import { useEffect,useState } from "react";
 import axios from 'axios';
 function  List(){
-
-
+    const list2= [{
+        name:"mango"
+    }]
     const [list,setList] = useState([])
-
-
-
     const getCharacter = async () =>{
         try{
             const { data } = await axios.get("https://rickandmortyapi.com/api/character");
