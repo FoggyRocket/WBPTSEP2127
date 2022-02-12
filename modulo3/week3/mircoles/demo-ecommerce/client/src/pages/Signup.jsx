@@ -7,10 +7,10 @@ import * as USER_HELPERS from "../utils/userToken";
 
 export default function Signup({ authenticate }) {
   const [form, setForm] = useState({
-    username: "",
+    email: "",
     password: "",
   });
-  const { username, password } = form;
+  const { email, password } = form;
   const [error, setError] = useState(null);
   const navigate = useNavigate();
 
@@ -22,7 +22,7 @@ export default function Signup({ authenticate }) {
   function handleFormSubmission(event) {
     event.preventDefault();
     const credentials = {
-      username,
+      email,
       password,
     };
     signup(credentials).then((res) => {
@@ -44,13 +44,13 @@ export default function Signup({ authenticate }) {
     <div>
       <h1>Sign Up</h1>
       <form onSubmit={handleFormSubmission} className="auth__form">
-        <label htmlFor="input-username">Username</label>
+        <label htmlFor="input-username">email</label>
         <input
           id="input-username"
           type="text"
-          name="username"
+          name="email"
           placeholder="Text"
-          value={username}
+          value={email}
           onChange={handleInputChange}
           required
         />

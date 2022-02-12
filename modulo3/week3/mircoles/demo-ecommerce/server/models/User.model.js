@@ -11,7 +11,7 @@ const userSchema = new Schema(
     },
     username: {
       type: String,
-      unique: true, //-> Ideally, should be unique, but its up to you
+      //unique: true, -> Ideally, should be unique, but its up to you
     },
     password: {
       type: String,

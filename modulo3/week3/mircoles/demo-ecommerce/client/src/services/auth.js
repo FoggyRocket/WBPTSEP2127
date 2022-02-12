@@ -28,7 +28,7 @@ const authService = axios.create({
 });
 
 export function login(credentials) {
-  return authService
+  return authService //{email:"dylan",password:"perro"}
     .post("/login", credentials)
     .then(successStatus)
     .catch(internalServerError);
@@ -44,7 +44,7 @@ export function getLoggedIn() {
     .then(successStatus)
     .catch(internalServerError);
 }
-
+                        //{email:"",password:""}
 export function signup(credentials) {
   return authService
     .post("/signup", credentials)

@@ -9,11 +9,11 @@ const routes = (props) => {
   const { user } = props;
   return [
     {
-      path: PATHS.HOMEPAGE,
+      path: PATHS.HOMEPAGE, // "/"
       element: <HomePage {...props} />,
     },
     {
-      path: PATHS.SIGNUPPAGE,
+      path: PATHS.SIGNUPPAGE, // "/auth/signup"
       element: <Signup {...props} />,
     },
 
@@ -31,5 +31,8 @@ const routes = (props) => {
     },
   ];
 };
+/**
+ *  <Route  path="/" element={<h1>Hola mundo </h1>}   />
+ */
 
 export default routes;
