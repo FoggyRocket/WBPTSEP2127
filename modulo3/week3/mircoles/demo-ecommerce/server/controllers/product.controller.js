@@ -1,5 +1,4 @@
 const Product = require("../models/Product.model");
-//Upload (todos los mid que necesitmos en esta ruta)
 
 exports.createProcess = (req, res, next) => {
   //agregar imagen
