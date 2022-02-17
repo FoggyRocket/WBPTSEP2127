@@ -1,15 +1,7 @@
 const router = require("express").Router();
-const {signupProcess,loginProcess,logoutProcess} = require("../controllers/auth.controller")
-
-
-// Require the User model in order to interact with the database
-const User = require("../models/User.model");
-const Session = require("../models/Session.model");
-
-// Require necessary (isLoggedOut and isLiggedIn) middleware in order to control access to specific routes
-const isLoggedOut = require("../middleware/isLoggedOut");
-const isLoggedIn = require("../middleware/isLoggedIn");
-
+const {signupProcess,loginProcess,logoutProcess,getUserLogged} = require("../controllers/auth.controller")
+//importa mi middelware
+const {verifyToken} = require("../middleware/util-mid")
 
 router.post("/signup",signupProcess);
 
@@ -17,6 +9,6 @@ router.post("/login",loginProcess);
 
 router.post("/logout",logoutProcess)
 
-
+router.get("/getUser", verifyToken  ,getUserLogged)
 
 module.exports = router;
