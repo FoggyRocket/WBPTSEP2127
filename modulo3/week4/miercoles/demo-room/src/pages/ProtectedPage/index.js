@@ -1,4 +1,11 @@
+import {useCookies} from 'react-cookie'
+
 const ProtectedPage = () => {
+    //utilizamos useCookies
+    const [cookies,setCookies] = useCookies();
+    //validar si hay cookies
+    //validar si la cookie es valida (aun tiene tiempo de vida)
+    console.log("como las obtemos en react??",cookies)
     return (
       <div>
         <h1>This page is hyper protected!</h1>

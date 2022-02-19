@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+//importamos el endpoint de LoginWs  para poder hacer login
+// {perro as GatoFunc} 
+import {loginWs} from '../../services/auth-ws'
 export default function LogIn({ authenticate }) {
   const [form, setForm] = useState({
     email: "",
@@ -12,17 +14,29 @@ export default function LogIn({ authenticate }) {
 
   function handleInputChange(event) {
     const { name, value } = event.target;
-
+    setError(null)//coloco este setError para borrar el mensaje cuando el usuario escriba una nueva contraseña o email
     return setForm({ ...form, [name]: value });
   }
 
-  function handleFormSubmission(event) {
+  async function handleFormSubmission(event) {
     event.preventDefault();
-    const credentials = {
-      email,
-      password,
-    };
-    console.log("Algo mas va aqui!",credentials)
+    try{
+      const credentials = {
+        email,
+        password,
+      };
+
+      const {data,status,errorMessage}= await loginWs(credentials)
+      if(status){
+        console.log("Algo mas va aqui!",data)
+      }else{
+        setError(errorMessage)
+      }
+    }catch(error){
+        console.log("el error",error)
+        setError(error.errorMessage)
+    }
+
   }
 
   return (
@@ -55,7 +69,7 @@ export default function LogIn({ authenticate }) {
         {error && (
           <div className="error-block">
             <p>There was an error submiting the form:</p>
-            <p>{error.message}</p>
+            <p>{error}</p>
           </div>
         )}
 

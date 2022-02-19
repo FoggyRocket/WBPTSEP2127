@@ -32,9 +32,10 @@ export default function Signup({ authenticate }) {
     .then(response => {
       //header,data,status
       console.log("response que es?",response)
+      navigate("/protected")
     })
     .catch(error=>{
-      console.log("los errores",error.response )
+      console.log("los errores",error )
     })
   }
 
