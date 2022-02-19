@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import { Home, LogIn, Signup, ProtectedPage, AuthAntd } from "./pages";
+import { Home, LogIn, Signup, ProtectedPage, AuthAntd,Product } from "./pages";
 
 function RootNavigation(props) {
   return (
@@ -10,6 +10,8 @@ function RootNavigation(props) {
       <Route path="/protected" element={<ProtectedPage {...props} />} />
       <Route path="/loginAntd" element={<AuthAntd {...props} />} />
       <Route path="/signupAntd" element={<AuthAntd {...props} />} />
+      <Route path="/productAdmin" element={<Product {...props} />} />
+
     </Routes>
   );
 }
