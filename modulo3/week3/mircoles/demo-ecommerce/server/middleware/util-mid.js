@@ -23,7 +23,7 @@ exports.verifyToken = (req,res,next) =>{
     //Como se ejecutan los metodos y las funciones se ejecutan name()
     if(!headload || !signature) return res.status(401).json({errorMessage:"Unauthorized"})
 
-
+            //732726347.123123.423e3e3d3e, Perrro182, (error,{emai:"",_id:"",perro:"No"}
     jwt.verify(`${headload}.${signature}`, process.env.SECRET, (err,decoded)=>{
         //estoy dentro del callback del verify
         if(err){

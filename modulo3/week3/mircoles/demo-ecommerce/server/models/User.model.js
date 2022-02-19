@@ -22,6 +22,10 @@ const userSchema = new Schema(
       default:
         "https://res.cloudinary.com/dhgfid3ej/image/upload/v1558806705/asdsadsa_iysw1l.jpg",
     },
+    // role:{
+    //   enum:["ADMIN","STAFF","USER"],
+    //   default:"USER"
+    // }
   },
   {
     // this second object adds extra properties: `createdAt` and `updatedAt`
