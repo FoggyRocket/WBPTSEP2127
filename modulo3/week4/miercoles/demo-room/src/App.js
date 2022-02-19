@@ -7,7 +7,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
   const handleLogout = () => {
   };
-
+ 
   const authenticate = (user) => {
     setUser(user);
   };

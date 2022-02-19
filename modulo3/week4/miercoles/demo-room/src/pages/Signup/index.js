@@ -31,8 +31,12 @@ export default function Signup({ authenticate }) {
     signupWs(dataForm)
     .then(response => {
       //header,data,status
-      console.log("response que es?",response)
-      navigate("/protected")
+      if(response.status){
+        navigate("/protected")
+      }else{
+        setError(response.errorMessage)
+      }
+     
     })
     .catch(error=>{
       console.log("los errores",error )

@@ -1,11 +1,8 @@
 import logo from "../../logo.svg";
 import "../../App.css";
-import {useCookies} from 'react-cookie'
 
 function HomePage() {
-  const [cookies,setCookies] = useCookies()
 
-  console.log("perro",cookies)
   return (
     <div className="App">
       <header className="App-header">

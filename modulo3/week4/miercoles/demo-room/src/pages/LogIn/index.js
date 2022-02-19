@@ -29,6 +29,7 @@ export default function LogIn({ authenticate }) {
       const {data,status,errorMessage}= await loginWs(credentials)
       if(status){
         console.log("Algo mas va aqui!",data)
+        navigate("/protected")
       }else{
         setError(errorMessage)
       }
